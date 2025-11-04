@@ -1,4 +1,7 @@
+let theNumber = Number(prompt("Pick a number"));
 
-let word = `half of 100 is ${100/2} `
-word += "happy"
-console.log(3.2 > 4.5)
+if (!Number.isNaN(theNumber)) {
+  console.log("Your number is the square root of " + theNumber * theNumber);
+}
+
+if (1 + 1 == 2) console.log("It is true");
