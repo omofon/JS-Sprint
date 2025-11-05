@@ -1,26 +1,25 @@
-function wrapValue(n) {
-  let local = n;
-  return () => local;
-}
+// Reversing String Function
+function reverseString(str) {
+  str = str.trim();
+  let reversed = "";
 
-let wrap1 = wrapValue(1);
-let wrap2 = wrapValue(2);
-console.log(wrap1());
-console.log(wrap2());
-
-function multiplier(factor) {
-  return (number) => number * factor;
-}
-
-let twice = multiplier(2);
-console.log(twice(5));
-
-function power(base, exponent) {
-  if (exponent == 0) {
-    return 1
-  } else {
-    return base * power(base, exponent-1)
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
   }
+  return reversed;
 }
 
-console.log(power(2, 6))
+console.log(reverseString("Happy "));
+
+// Sum of an array
+function sumArray(arr) {
+  let sum = 0;
+  for (item of arr) {
+    if (Number.isNaN(item)) {
+      continue;
+    } else sum += item;
+  }
+  return sum;
+}
+
+console.log(sumArray([34, -6, 23, 0, 24, "duty"]));
