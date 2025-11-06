@@ -1,17 +1,27 @@
-function repeat(n, action) {
-  for (let i = 0; i < n; i++) {
-    action(i);
+function filter(arr, test) {
+  let passed = [];
+  for (let element of arr) {
+    if (test(element)) {
+      passed.push(element);
+    }
   }
+  return passed;
 }
 
-const inventory = [];
-repeat(5, (i) => {
-  inventory.push(`Unit ${i + 1}`);
-});
-
-function greaterThan(n) {
-    return m => m > n
+function map(arr, transform) {
+  let mapped = [];
+  for (let element of arr) {
+    mapped.push(transform(element));
+  }
+  return mapped;
 }
 
-let greaterThan10 = greaterThan(10)
-console.log(greaterThan10(2))
+function reduce(array, combine, start) {
+    let current = start
+    for (let element of array) {
+        current = combine(current, element) 
+    }
+    return current
+}
+
+console.log(reduce([1,2,3,4], (a,b)=>a+b, 0))
